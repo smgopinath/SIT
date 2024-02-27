@@ -1,0 +1,4 @@
+truncate t_hi_addons_ratemaster;
+truncate t_hi_consolidated_addon;
+truncate t_hi_consolidate_addon_rate_master;
+truncate t_hi_room_types;
