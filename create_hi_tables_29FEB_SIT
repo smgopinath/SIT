@@ -1,0 +1,31 @@
+CREATE TABLE t_hi_question_master (
+  hi_question_master_id bigint NOT NULL AUTO_INCREMENT,
+  product_code varchar(45) DEFAULT NULL,
+  question_level varchar(45) DEFAULT NULL,
+  parent_question_code varchar(45) DEFAULT NULL,
+  parent_question_desc varchar(600) DEFAULT NULL,
+  child_question_code varchar(45) DEFAULT NULL,
+  child_question_desc varchar(255) DEFAULT NULL,
+  child_answer_code varchar(45) DEFAULT NULL,
+  child_answer_desc varchar(255) DEFAULT NULL,
+  created_date datetime(6) DEFAULT NULL,
+  created_by varchar(45) DEFAULT 'system',
+  active bit(1) DEFAULT NULL,
+  PRIMARY KEY (hi_question_master_id)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='List of questions from Jarvis';
+
+CREATE TABLE t_hi_lifestyle_medical_details (
+  hi_lifestyle_responses_id bigint NOT NULL AUTO_INCREMENT,
+  family_id int DEFAULT NULL,
+  relation_type varchar(45) DEFAULT NULL,
+  question_code varchar(45) DEFAULT NULL,
+  remaks varchar(500) DEFAULT NULL,
+  answer varchar(255) DEFAULT NULL,
+  active bit(1) DEFAULT NULL,
+  created_date datetime(6) DEFAULT NULL,
+  created_by varchar(45) DEFAULT NULL,
+  PRIMARY KEY (hi_lifestyle_responses_id),
+  KEY fx_t_hi_lifestyle_medical_details (family_id),
+  CONSTRAINT t_hi_lifestyle_medical_details_ibfk_1 FOREIGN KEY (family_id) REFERENCES t_hi_family_details (family_id)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
