@@ -1,0 +1,1 @@
+update t_hi_cover_rate_master set cm_cover_desc='Super No Claim Bonus' where cm_id=21;
